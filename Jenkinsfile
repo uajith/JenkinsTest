@@ -3,7 +3,17 @@ pipeline{
   stages {
     stage ("build"){
       steps {
-        echo "HI"
+        echo "BUILD in progress"
+      }
+    }
+    stage ("test"){
+      steps {
+        echo "Test in progress"
+      }
+    }
+    stage ("deploy"){
+      steps {
+        echo "Deploy in progress"
       }
     }
   }
