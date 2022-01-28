@@ -9,6 +9,7 @@ pipeline{
     stage ("test"){
       steps {
         echo "Test in progress"
+        currentBuild.result = 'ABORTED'
       }
     }
     stage ("deploy"){
