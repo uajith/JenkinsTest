@@ -2,7 +2,8 @@ def autoCancelled = false
 
 try {
   stage('checkout') {
-    x = 10
+    sh "which python"
+    sh "which python3"
     if (1) {
       autoCancelled = true
       return
