@@ -9,6 +9,7 @@ pipeline {
         catchError {
           sh '/bin/bash which python'
           sh '/bin/bash which python3'
+          sh 'ls -lart'
         }
       }
       post {
