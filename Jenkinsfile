@@ -8,7 +8,7 @@ pipeline {
       steps {
         catchError {
           sh '/bin/bash which python'
-          sh '/bin/bash which python'
+          sh '/bin/bash which python3'
         }
       }
       post {
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Production') {
       steps {
-        sh '/bin/bash pwd'
+        sh 'pwd'
       }
     }
   }
