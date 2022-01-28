@@ -15,7 +15,7 @@ try {
   }
 } catch (e) {
   if (autoCancelled) {
-    currentBuild.result = 'ABORTED'
+    currentBuild.result = 'FAILED'
     echo('Skipping mail notification')
     // return here instead of throwing error to keep the build "green"
     return
