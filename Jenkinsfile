@@ -7,8 +7,8 @@ pipeline {
     stage('Build') {
       steps {
         catchError {
-          sh 'which python'
-          sh 'which python
+          sh '/bin/bash which python'
+          sh '/bin/bash which python'
         }
       }
       post {
