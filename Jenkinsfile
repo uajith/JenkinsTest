@@ -11,12 +11,7 @@ pipeline {
                                returnStdout: true
                               ).trim()
           echo "Scan Status: ${SONARSCAN_STATUS}"
-          when {
-            expression { ${SONARSCAN_STATUS} == 'FAIL' }
-            }
-            steps {
-                echo "Hello, bitwiseman!"
-            }
+          
           
         }
       }
