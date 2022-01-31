@@ -9,7 +9,7 @@ pipeline {
         catchError {
           sh '/bin/bash which python'
           sh '/bin/bash which python3'
-          sh 'python3 rand_number.py'
+          sh '/bin/bash wrapper.sh'
           sh 'ls -lart'
         }
       }
