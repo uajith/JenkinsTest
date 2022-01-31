@@ -1,5 +1,3 @@
-
-
 pipeline {
 
   agent any
@@ -8,14 +6,17 @@ pipeline {
     stage('Build') {
       steps {
         script {
-                 
-        SONARSCAN_STATUS = sh (
-    script: '/bin/bash wrapper.sh',
-    returnStdout: true
-).trim()
-echo "Scan Status: ${SONARSCAN_STATUS}"
-          
-                  }
+          SONARSCAN_STATUS = sh (
+                               script: '/bin/bash wrapper.sh',
+                               returnStdout: true
+                              ).trim()
+          echo "Scan Status: ${SONARSCAN_STATUS}"
+          if ( ${SONARSCAN_STATUS} == 'SUCCESS' ){
+              echo "SOMETHING  GOOD"
+          } else {
+              echo "SOMETHING BAD"    
+          }
+        }
       }
       post {
         success {
