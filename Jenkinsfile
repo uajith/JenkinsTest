@@ -9,9 +9,11 @@ pipeline {
       steps {
         script {
                  
-         sh "/bin/bash wrapper.sh > commandResult"
-         result = readFile('commandResult').trim()
-         echo $result 
+        SONARSCAN_STATUS = sh (
+    script: 'ls -lart',
+    returnStdout: true
+).trim()
+echo "Scan Status: ${SONARSCAN_STATUS}"
           
                   }
       }
