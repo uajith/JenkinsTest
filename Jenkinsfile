@@ -11,7 +11,7 @@ pipeline {
                  
          sh "/bin/bash wrapper.sh > commandResult"
          result = readFile('commandResult').trim()
-          
+         echo $result 
           
                   }
       }
