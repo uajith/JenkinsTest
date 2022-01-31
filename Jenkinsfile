@@ -14,7 +14,7 @@ pipeline {
           if (SONARSCAN_STATUS == 'SUCCESS'){
             echo "ALL IS WELL"
           } else {
-            echo "WORKING on it"
+            echo "Aborting the build since SonarScan is failed"
             currentBuild.result = 'ABORTED'
           }
           
