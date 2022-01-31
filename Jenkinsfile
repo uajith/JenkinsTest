@@ -9,7 +9,8 @@ pipeline {
       steps {
         script {
                  
-          sh '/bin/bash wrapper.sh'
+         sh "/bin/bash wrapper.sh > commandResult"
+         result = readFile('commandResult').trim()
           
           
                   }
