@@ -9,11 +9,7 @@ pipeline {
       steps {
         script {
                  
-          def sout = new StringBuilder(), serr = new StringBuilder()
-          def proc = '/bin/bash wrapper.sh'.execute()
-          proc.consumeProcessOutput(sout, serr)
-          proc.waitForOrKill(1000)
-          println "out> $sout\nerr> $serr"
+          sh '/bin/bash wrapper.sh'
           
           
                   }
