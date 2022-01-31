@@ -7,11 +7,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        catchError {
-          sh '/bin/bash which python'
-          sh '/bin/bash which python3'
-          sh '/bin/bash wrapper.sh'
-          
+        script {
+                 
           def sout = new StringBuilder(), serr = new StringBuilder()
           def proc = '/bin/bash wrapper.sh'.execute()
           proc.consumeProcessOutput(sout, serr)
