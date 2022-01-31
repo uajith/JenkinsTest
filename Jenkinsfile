@@ -10,7 +10,8 @@ pipeline {
           sh '/bin/bash which python'
           sh '/bin/bash which python3'
           sh '/bin/bash wrapper.sh'
-          sh 'ls -lart'
+          String result = "/bin/bash wrapper.sh".execute().text
+          println result.toUpperCase()
         }
       }
       post {
