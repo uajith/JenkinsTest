@@ -15,7 +15,7 @@ pipeline {
             echo "ALL IS WELL"
           } else {
             echo "WORKING on it"
-            currentBuild.result = 'FAILED'
+            currentBuild.result = 'ABORTED'
           }
           
           
