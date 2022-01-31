@@ -34,8 +34,9 @@ pipeline {
           sh '/bin/bash which python'
           sh '/bin/bash which python3'
           sh '/bin/bash wrapper.sh'
-          runCommand("echo HELLO WORLD") 
-           
+          script{
+            runCommand("echo HELLO WORLD") 
+          }
         }
       }
       post {
