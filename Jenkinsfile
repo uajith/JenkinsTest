@@ -11,6 +11,7 @@ pipeline {
           sh '/bin/bash which python3'
           sh '/bin/bash wrapper.sh'
           sh 'ls -lart'
+          sh 'pwd'
         }
       }
       post {
