@@ -11,6 +11,9 @@ pipeline {
                                returnStdout: true
                               ).trim()
           echo "Scan Status: ${SONARSCAN_STATUS}"
+          if (${SONARSCAN_STATUS} == 'FAIL'){
+            echo "ALL IS WELL"
+          }
           
           
         }
